@@ -5,15 +5,19 @@ import com.beeva.app.dao.CuentaDAO;
 
 public class CuentaAhorro implements CuentaDAO{
 
-	public boolean deposito(Cliente cliente, double dep) {
-		System.out.println("CuentaAhorro");
+	public boolean deposito(Cliente cliente, double dep) {		
+		boolean finalizado=false;
 		cliente.getCuenta().setBalance(cliente.getCuenta().getBalance()+dep);		
-		return false;
+		return finalizado;
 	}
 
 	public boolean retiro(Cliente cliente, double ret) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean finalizado=false;
+		if(cliente.getCuenta().getBalance()>5000){
+			cliente.getCuenta().setBalance(cliente.getCuenta().getBalance()-ret);
+			finalizado=true;
+		}
+		return finalizado;
 	}
 
 }

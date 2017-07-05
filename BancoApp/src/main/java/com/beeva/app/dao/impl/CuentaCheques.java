@@ -6,14 +6,14 @@ import com.beeva.app.dao.CuentaDAO;
 public class CuentaCheques implements CuentaDAO{
 
 	public boolean deposito(Cliente cliente, double dep) {
-		
-		return false;
+		boolean finalizado=false;
+		cliente.getCuenta().setBalance(cliente.getCuenta().getBalance()+dep);		
+		return finalizado;
 	}
 
 	public boolean retiro(Cliente cliente, double ret) {
-		if(cliente.getCuenta().getBalance()<5000){
-			
-		}
-		return false;
+		boolean finalizado=false;
+		cliente.getCuenta().setBalance(cliente.getCuenta().getBalance()-ret);
+		return finalizado;
 	}
 }

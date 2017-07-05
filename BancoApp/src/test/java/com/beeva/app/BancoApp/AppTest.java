@@ -8,6 +8,7 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import com.beeva.app.dao.factory.CuentaFactory;
+import com.beeva.app.utilerias.Validacion;
 
 /**
  * Unit test for simple App.
@@ -27,7 +28,9 @@ public class AppTest extends TestCase{
         CuentaDAO cuentaMetodos = cuentaFactory.getImplCuenta(cuenta);           
         Cliente cliente = new Cliente("juan", "Alverto",cuenta);
         cuentaMetodos.deposito(cliente,156.65);
-        System.out.println(cliente.getCuenta().getBalance());
+        System.out.println(cliente.getCuenta().getBalance()+"\n");
+        Validacion val = new Validacion();
+        System.out.println(val.esDiaHabil());
     }
 
     /**
