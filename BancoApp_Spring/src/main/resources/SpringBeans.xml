@@ -5,6 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
-	<bean id=""></bean>
+	<bean id="cuenta" class="com.beeva.app.dao.Cliente" scope="prototype"></bean>
+	<bean id="cliente" class="com.beeva.app.dao.Cuenta" scope="prototype"></bean>
 		
 </beans>
