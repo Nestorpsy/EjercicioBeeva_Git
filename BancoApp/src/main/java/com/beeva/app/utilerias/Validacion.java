@@ -12,5 +12,9 @@ public class Validacion {
 		if(dia==7){esHabil=false;}
 		return esHabil;
 	}
-
+	
+	public boolean isNumber(){
+		
+		return false;
+	}
 }

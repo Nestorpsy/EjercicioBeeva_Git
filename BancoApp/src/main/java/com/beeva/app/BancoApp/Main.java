@@ -6,7 +6,7 @@ import com.beeva.app.gui.Principal;
  * Hello world!
  *
  */
-public class App{
+public class Main{
 	static Principal principal = new Principal();
     public static void main( String[] args )
     {    	

@@ -13,13 +13,13 @@ import com.beeva.app.utilerias.Validacion;
 /**
  * Unit test for simple App.
  */
-public class AppTest extends TestCase{
+public class MainTest extends TestCase{
     /**
      * Create the test case
      *
      * @param testName name of the test case
      */
-    public AppTest( String testName )
+    public MainTest( String testName )
     {
         super( testName );
         System.out.println("Prueba para crear cliente y sus metodos");
@@ -38,7 +38,7 @@ public class AppTest extends TestCase{
      */
     public static Test suite()
     {
-        return new TestSuite( AppTest.class );
+        return new TestSuite( MainTest.class );
     }
 
     /**

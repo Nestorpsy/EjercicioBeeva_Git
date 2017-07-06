@@ -2,6 +2,7 @@ package com.beeva.app.dao.impl;
 
 import com.beeva.app.dao.Cliente;
 import com.beeva.app.dao.CuentaDAO;
+import com.beeva.app.utilerias.Validacion;
 
 public class CuentaCheques implements CuentaDAO{
 
@@ -13,7 +14,11 @@ public class CuentaCheques implements CuentaDAO{
 
 	public boolean retiro(Cliente cliente, double ret) {
 		boolean finalizado=false;
-		cliente.getCuenta().setBalance(cliente.getCuenta().getBalance()-ret);
+		Validacion val = new Validacion();
+		if(val.esDiaHabil()){
+			cliente.getCuenta().setBalance(cliente.getCuenta().getBalance()-ret);
+			finalizado=true;
+		}
 		return finalizado;
 	}
 }

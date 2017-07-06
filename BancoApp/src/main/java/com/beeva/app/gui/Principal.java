@@ -3,6 +3,9 @@ package com.beeva.app.gui;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import javax.swing.SwingConstants;
 
 public class Principal {
 
@@ -36,8 +39,13 @@ public class Principal {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		BorderLayout borderLayout = (BorderLayout) frame.getContentPane().getLayout();
+		frame.setBounds(100, 100, 716, 494);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLabel lblBienidoALa = new JLabel("Bienido a la aplicacion Banco \r\n\r\nSeleccione alguna de las siguientes opciones");
+		lblBienidoALa.setHorizontalAlignment(SwingConstants.CENTER);
+		frame.getContentPane().add(lblBienidoALa, BorderLayout.NORTH);
 	}
 
 }
