@@ -4,8 +4,8 @@
 	<pluginVersion><![CDATA[3.8.4.201703310634-RELEASE]]></pluginVersion>
 	<configs>
 		<config>
-			<file>src/main/resources/META-INF/persistence.xml</file>
-			<name><![CDATA[persistence]]></name>
+			<file>src/main/resources/META-INF/persicistance.xml</file>
+			<name><![CDATA[bancoApp_h]]></name>
 		</config>
 	</configs>
 </webflow-project-description>

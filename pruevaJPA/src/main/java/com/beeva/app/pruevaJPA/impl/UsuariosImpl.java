@@ -17,12 +17,30 @@ public class UsuariosImpl extends UsuariosDAO{
 	@Override
 	@Transactional
 	public void save(Usuario usuarios) {
-		manager.persist(usuarios);
+		try {
+			manager.getTransaction().begin();
+			manager.persist(usuarios);
+			manager.getTransaction().commit();			
+		} catch (Exception e) {
+			System.out.println("UsuariosImpl.save()");
+		}finally {
+			manager.clear();
+		}
+		
 	}
 
 	@Override
 	@Transactional
-	public Usuario getrUser(int id) {		
-		return manager.find(Usuario.class,id);
+	public Usuario getrUser(int id) {	
+		try {
+			manager.getTransaction().begin();
+			return manager.find(Usuario.class,id);
+		} catch (Exception e) {
+			System.out.println("UsuariosImpl.getrUser()");
+			return null;
+		}finally {
+			manager.clear();
+		}
+		
 	}
 }

@@ -8,8 +8,30 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 		
 		<context:annotation-config/>	
-		<context:component-scan base-package="com.beeva.app"></context:component-scan>
+		<context:component-scan base-package="com.beeva.app.BancoApp_H.impl"></context:component-scan>
 		<tx:annotation-driven/>
 		
+		<bean id="mydataSource"
+			class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+			<property name="url" value="jdbc:mysql://localhost:3306/bankapp" />
+			<property name="username" value="root" />
+			<property name="password" value="root" />
+		</bean>
+	
+		<bean id="myemf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+				<property name="dataSource" ref="mydataSource"></property>
+				<property name="persistenceUnitName" value="pruebaSH"></property>
+		</bean>
+		
+		<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+			<property name="entityManagerFactory" ref="myemf"></property>
+		</bean>
+		
+		<bean id="myMongo"
+			class="com.mongodb.MongoClient">
+			<constructor-arg name="host" value="localhost"/>
+			<constructor-arg name="port" value="27017"/>
+		</bean>
 		
 </beans>
