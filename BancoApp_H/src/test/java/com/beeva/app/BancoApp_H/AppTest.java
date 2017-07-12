@@ -1,10 +1,8 @@
 package com.beeva.app.BancoApp_H;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import com.beeva.app.BancoApp_H.impl.BancoImpl;
 import com.beeva.app.BancoApp_H.modelo.Banco;
+import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -14,14 +12,14 @@ import junit.framework.TestSuite;
  * Unit test for simple App.
  */
 public class AppTest extends TestCase{
-	ApplicationContext context = new ClassPathXmlApplicationContext("context-core.xml");
+	ContexSingle single = ContexSingle.getInstance();
     /**
      * Create the test case
      *
      * @param testName name of the test case
      */
     public AppTest( String testName )
-    {
+    { 
         super( testName );        
         //usuarios();      
         banco();
@@ -35,7 +33,7 @@ public class AppTest extends TestCase{
     public void banco(){
     	System.out.println("Hola de prueba Banco");
     	Banco banco = new Banco();
-    	BancoImpl impl = (BancoImpl) context.getBean(BancoImpl.class);
+    	BancoImpl impl = (BancoImpl) single.getContext().getBean(BancoImpl.class);
     	banco.setNombre("Bancomer");
     	impl.addBanco(banco);
     }

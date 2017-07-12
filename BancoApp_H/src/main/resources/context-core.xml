@@ -33,7 +33,5 @@
 			<constructor-arg name="host" value="localhost"/>
 			<constructor-arg name="port" value="27017"/>
 		</bean>
-		
-		
-		
+				
 </beans>

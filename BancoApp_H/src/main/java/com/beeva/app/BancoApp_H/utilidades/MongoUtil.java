@@ -4,22 +4,17 @@ import java.io.PrintWriter;
 import java.lang.reflect.Field;
 import java.util.Date;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 
 public class MongoUtil {
-	
-	private ApplicationContext context;
+	ContexSingle single = ContexSingle.getInstance();
 
-	public void mandarLog(Object todo,String accion){
-		context = new ClassPathXmlApplicationContext("context-core.xml");    
-	    try {        	    	        	
-	        MongoClient mongo = (MongoClient) context.getBean("myMongo");
+	public void mandarLog(Object todo,String accion){ 
+	    try {
+	    	MongoClient mongo = (MongoClient) single.getContext().getBean("myMongo");
 			DB db = mongo.getDB("testdb");
 			DBCollection table = db.getCollection("logCollection");						
 			BasicDBObject document = introspectInstance(todo, new PrintWriter(System.out),accion);
