@@ -8,19 +8,19 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.beeva.app.BancoApp_H.dao.ClienteDAO;
 import com.beeva.app.BancoApp_H.modelo.Cliente;
+import com.beeva.app.BancoApp_H.utilidades.MongoUtil;
 
 @Repository
 public class ClienteImpl extends ClienteDAO{
 	@PersistenceContext
 	EntityManager manager;
-
+	MongoUtil mongo = new MongoUtil();
 	@Override
 	@Transactional
 	public void addCiente(Cliente cliente) {	
 		try {
-			manager.getTransaction().begin();
 			manager.persist(cliente);
-			manager.getTransaction().commit();
+			mongo.mandarLog(cliente, "addCiente");
 		} catch (Exception e) {
 			System.out.println("ClienteImpl.addCiente()");
 		}finally {
@@ -45,13 +45,11 @@ public class ClienteImpl extends ClienteDAO{
 	@Override
 	@Transactional
 	public void updateCliente(Cliente cliente) {
-		try {
-			manager.getTransaction().begin();
+		try {			
 			Cliente clienteActualizado = manager.find(Cliente.class, cliente.getIdcliente());
 			clienteActualizado.setNombre(cliente.getNombre());
 			clienteActualizado.setApellido(cliente.getApellido());
-			manager.getTransaction().commit();
-			
+			mongo.mandarLog(clienteActualizado, "updateCliente");
 		} catch (Exception e) {
 			System.out.println("ClienteImpl.updateCliente()");
 		}finally {

@@ -18,7 +18,6 @@ public class TipoDeCuentaImpl extends TipoDeCuentaDAO{
 	@Transactional
 	public TipoDeCuenta getTipoDeCuenta(TipoDeCuenta tipoDeCuenta) {
 		try {
-			manager.getTransaction().begin();
 			return manager.find(TipoDeCuenta.class, tipoDeCuenta);
 		} catch (Exception e) {
 			System.out.println("TipoDeCuentaImpl.getTipoDeCuenta()");

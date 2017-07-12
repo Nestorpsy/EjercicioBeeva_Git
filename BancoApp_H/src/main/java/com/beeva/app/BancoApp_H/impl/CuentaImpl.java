@@ -8,19 +8,19 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.beeva.app.BancoApp_H.dao.CuentaDAO;
 import com.beeva.app.BancoApp_H.modelo.Cuenta;
+import com.beeva.app.BancoApp_H.utilidades.MongoUtil;
 
 @Repository
 public class CuentaImpl extends CuentaDAO{
 	@PersistenceContext
 	EntityManager manager;
-
+	MongoUtil mongo = new MongoUtil();
 	@Override
 	@Transactional
 	public void addCuenta(Cuenta cuenta) {
 		try {
-			manager.getTransaction().begin();
-			manager.persist(cuenta);
-			manager.getTransaction().commit();			
+			manager.persist(cuenta);	
+			mongo.mandarLog(cuenta, "addCuenta");
 		} catch (Exception e) {
 			System.out.println("CuentaImpl.addCuenta()");
 		}finally {
@@ -32,7 +32,6 @@ public class CuentaImpl extends CuentaDAO{
 	@Transactional
 	public Cuenta getCuenta(int idcuenta) {
 		try {
-			manager.getTransaction().begin();
 			return manager.find(Cuenta.class, idcuenta);
 		} catch (Exception e) {
 			System.out.println("CuentaImpl.getCuenta()");
@@ -46,16 +45,13 @@ public class CuentaImpl extends CuentaDAO{
 	@Transactional
 	public void updateCuenta(Cuenta cuenta) {
 		try {
-			manager.getTransaction().begin();
 			Cuenta cuentaActualizado = manager.find(Cuenta.class, cuenta.getIdcliente());
 			cuentaActualizado.setBalance(cuenta.getBalance());
-			manager.getTransaction().commit();
-			
+			mongo.mandarLog(cuentaActualizado, "addCuenta");
 		} catch (Exception e) {
 			System.out.println("CuentaImpl.updateCuenta()");
 		}finally {
 			manager.clear();
 		}
-	}
-	
+	}	
 }

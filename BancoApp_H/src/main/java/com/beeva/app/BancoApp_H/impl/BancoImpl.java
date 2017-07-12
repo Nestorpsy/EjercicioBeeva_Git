@@ -20,8 +20,7 @@ public class BancoImpl extends BancoDAO{
 	public void addBanco(Banco banco) {
 		try {			
 			manager.persist(banco);	
-			
-			
+			mongo.mandarLog(banco,"addBanco");
 		} catch (Exception e) {			
 			System.out.println("BancoImpl.addBanco()");
 			e.printStackTrace();
@@ -33,11 +32,11 @@ public class BancoImpl extends BancoDAO{
 	@Override
 	@Transactional
 	public Banco getBanco(int idbanco) {
-		try {
-			manager.getTransaction().begin();			
+		try {			
 			return manager.find(Banco.class, idbanco);			
 		} catch (Exception e) {
 			System.out.println("BancoImpl.getBanco()");
+			e.printStackTrace();
 			return null;
 		}finally {
 			manager.clear();
@@ -48,12 +47,12 @@ public class BancoImpl extends BancoDAO{
 	@Override
 	@Transactional
 	public void deletBanco(Banco banco) {
-		try {						
-			manager.getTransaction().begin();	
+		try {							
 			manager.remove(banco);
-			manager.getTransaction().commit();
+			mongo.mandarLog(banco,"deletBanco");
 		} catch (Exception e) {
-			System.out.println("BancoImpl.deletBanco()");			
+			System.out.println("BancoImpl.deletBanco()");	
+			e.printStackTrace();
 		}finally {
 			manager.clear();
 		}
