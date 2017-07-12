@@ -21,6 +21,7 @@ public class TipoDeCuentaImpl extends TipoDeCuentaDAO{
 			return manager.find(TipoDeCuenta.class, tipoDeCuenta);
 		} catch (Exception e) {
 			System.out.println("TipoDeCuentaImpl.getTipoDeCuenta()");
+			e.printStackTrace();
 			return null;
 		}finally {
 			manager.clear();

@@ -23,6 +23,7 @@ public class CuentaImpl extends CuentaDAO{
 			mongo.mandarLog(cuenta, "addCuenta");
 		} catch (Exception e) {
 			System.out.println("CuentaImpl.addCuenta()");
+			e.printStackTrace();
 		}finally {
 			manager.clear();
 		}
@@ -35,6 +36,7 @@ public class CuentaImpl extends CuentaDAO{
 			return manager.find(Cuenta.class, idcuenta);
 		} catch (Exception e) {
 			System.out.println("CuentaImpl.getCuenta()");
+			e.printStackTrace();
 			return null;
 		}finally {
 			manager.clear();
@@ -50,6 +52,7 @@ public class CuentaImpl extends CuentaDAO{
 			mongo.mandarLog(cuentaActualizado, "addCuenta");
 		} catch (Exception e) {
 			System.out.println("CuentaImpl.updateCuenta()");
+			e.printStackTrace();
 		}finally {
 			manager.clear();
 		}

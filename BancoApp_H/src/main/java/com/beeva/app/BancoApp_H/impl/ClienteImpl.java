@@ -23,7 +23,8 @@ public class ClienteImpl extends ClienteDAO{
 			mongo.mandarLog(cliente, "addCiente");
 		} catch (Exception e) {
 			System.out.println("ClienteImpl.addCiente()");
-		}finally {
+			e.printStackTrace();
+			}finally {
 			manager.clear();
 		}
 	}
@@ -32,10 +33,10 @@ public class ClienteImpl extends ClienteDAO{
 	@Transactional
 	public Cliente getCliente(int idcliente) {
 		try {
-			manager.getTransaction().begin();
 			return manager.find(Cliente.class, idcliente);
 		} catch (Exception e) {
 			System.out.println("ClienteImpl.getCliente()");
+			e.printStackTrace();
 			return null;
 		}finally {
 			manager.clear();
@@ -52,6 +53,7 @@ public class ClienteImpl extends ClienteDAO{
 			mongo.mandarLog(clienteActualizado, "updateCliente");
 		} catch (Exception e) {
 			System.out.println("ClienteImpl.updateCliente()");
+			e.printStackTrace();
 		}finally {
 			manager.clear();
 		}

@@ -22,7 +22,8 @@ public class BancoClientesImpl extends BancosClientesDAO{
 			manager.persist(bancosClientes);
 			mongo.mandarLog(bancosClientes, "addBancoClientes");
 		} catch (Exception e) {
-			System.out.println("BancoClientesImpl.addBancoClientes()");			
+			System.out.println("BancoClientesImpl.addBancoClientes()");		
+			e.printStackTrace();
 		}finally {
 			manager.clear();
 		}		
@@ -35,6 +36,7 @@ public class BancoClientesImpl extends BancosClientesDAO{
 			return manager.find(BancosClientes.class, idbancosclientes);			
 		} catch (Exception e) {
 			System.out.println("BancoClientesImpl.getBancosClientes()");
+			e.printStackTrace();
 			return null;
 		}finally {
 			manager.clear();
