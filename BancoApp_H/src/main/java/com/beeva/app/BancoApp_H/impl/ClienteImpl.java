@@ -1,5 +1,6 @@
 package com.beeva.app.BancoApp_H.impl;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -17,7 +18,7 @@ public class ClienteImpl extends ClienteDAO{
 	MongoUtil mongo = new MongoUtil();
 	@Override
 	@Transactional
-	public void addCiente(Cliente cliente) {	
+	public void addCiente(Cliente cliente) {		
 		try {
 			manager.persist(cliente);
 			mongo.mandarLog(cliente, "addCiente");
@@ -31,16 +32,16 @@ public class ClienteImpl extends ClienteDAO{
 
 	@Override
 	@Transactional
-	public Cliente getCliente(int idcliente) {
-		try {
-			return manager.find(Cliente.class, idcliente);
+	public Cliente getCliente(int idcliente) {		
+		try {			
+			Cliente getcliente = new Cliente();
+			getcliente=manager.find(Cliente.class,  idcliente);
+			return getcliente;
 		} catch (Exception e) {
 			System.out.println("ClienteImpl.getCliente()");
 			e.printStackTrace();
 			return null;
-		}finally {
-			manager.clear();
-		}		
+		}
 	}
 
 	@Override

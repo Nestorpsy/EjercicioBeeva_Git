@@ -18,7 +18,7 @@ public class ContexSingle {
 	}
 	
 	public ApplicationContext getContext() {
-		return context  = new ClassPathXmlApplicationContext("context-core.xml");
+		return context ;
 	}
 
 	public void setContext(ApplicationContext context) {
