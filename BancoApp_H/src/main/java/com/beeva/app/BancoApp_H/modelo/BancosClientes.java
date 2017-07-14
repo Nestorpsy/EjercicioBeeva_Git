@@ -12,6 +12,7 @@ public class BancosClientes {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idbancosclientes;
+	
 	private int idcliente;
 	private int idbanco;
 	
@@ -33,4 +34,9 @@ public class BancosClientes {
 	public void setIdbanco(int idbanco) {
 		this.idbanco = idbanco;
 	}
+	@Override
+	public String toString() {
+		return "BancosClientes [idbancosclientes=" + idbancosclientes + ", idcliente=" + idcliente + ", idbanco="
+				+ idbanco + "]";
+	}	
 }

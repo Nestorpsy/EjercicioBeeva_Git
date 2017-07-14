@@ -14,8 +14,7 @@ public class Validacion {
 		return esHabil;
 	}
 	
-	public boolean isNumber(){
+	public void depositosBuenos(){
 		
-		return false;
 	}
 }

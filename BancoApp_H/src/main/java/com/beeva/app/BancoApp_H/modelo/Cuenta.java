@@ -40,4 +40,10 @@ public class Cuenta {
 	public void setIdtipocuenta(int idtipocuenta) {
 		this.idtipocuenta = idtipocuenta;
 	}
+	
+	@Override
+	public String toString() {
+		return "Cuenta [idcuenta=" + idcuenta + ", balance=" + balance + ", idcliente=" + idcliente + ", idtipocuenta="
+				+ idtipocuenta + "]";
+	}
 }

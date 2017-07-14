@@ -1,8 +1,11 @@
 package com.beeva.app.BancoApp_H.impl;
 
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,13 +49,25 @@ public class ClienteImpl extends ClienteDAO{
 	@Transactional
 	public void updateCliente(Cliente cliente) {
 		try {			
-			Cliente clienteActualizado = manager.find(Cliente.class, cliente.getIdcliente());
-			clienteActualizado.setNombre(cliente.getNombre());
-			clienteActualizado.setApellido(cliente.getApellido());
-			mongo.mandarLog(clienteActualizado, "updateCliente");
+			manager.merge(cliente);
+			mongo.mandarLog(cliente, "updateCliente");
 		} catch (Exception e) {
 			System.out.println("ClienteImpl.updateCliente()");
 			e.printStackTrace();
+		}
+	}
+
+	@Override
+	@Transactional
+	public List<Cliente> getAllCliente() {
+		try {
+		      Query query = manager.createQuery("from Cliente");
+		      @SuppressWarnings("unchecked")
+			List<Cliente> list=query.getResultList();
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
 	}
 

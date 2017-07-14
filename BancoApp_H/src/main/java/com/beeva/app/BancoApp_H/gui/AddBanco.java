@@ -14,6 +14,10 @@ import com.beeva.app.BancoApp_H.modelo.Banco;
 import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
 
 public class AddBanco extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textFieldNombreAddBanco;
 	ContexSingle single = ContexSingle.getInstance();
 

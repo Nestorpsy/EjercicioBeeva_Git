@@ -1,7 +1,10 @@
 package com.beeva.app.BancoApp_H.impl;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,12 +46,25 @@ public class CuentaImpl extends CuentaDAO{
 	@Transactional
 	public void updateCuenta(Cuenta cuenta) {
 		try {
-			Cuenta cuentaActualizado = manager.find(Cuenta.class, cuenta.getIdcliente());
-			cuentaActualizado.setBalance(cuenta.getBalance());
-			mongo.mandarLog(cuentaActualizado, "addCuenta");
+			manager.merge(cuenta);
+			mongo.mandarLog(cuenta, "updateCuenta");
 		} catch (Exception e) {
 			System.out.println("CuentaImpl.updateCuenta()");
 			e.printStackTrace();
 		}
-	}	
+	}
+
+	@Override
+	@Transactional
+	public List<Cuenta> getAllCuenta() {
+		try {
+		      Query query = manager.createQuery("from Cuenta");
+		      @SuppressWarnings("unchecked")
+			List<Cuenta> list=query.getResultList();
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

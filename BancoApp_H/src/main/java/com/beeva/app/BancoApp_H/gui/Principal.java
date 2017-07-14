@@ -15,16 +15,19 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
 
 public class Principal extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private AddBanco addBanco = new AddBanco();
 	private AddCliente addCliente= new AddCliente();
 	private AddCuenta addCuenta = new AddCuenta();
+	private Cuentas cuentasPane = new Cuentas();
     static ContexSingle single = ContexSingle.getInstance();
 
 	/**
@@ -36,7 +39,6 @@ public class Principal extends JFrame {
 				try {
 					Principal frame = new Principal();
 					frame.setVisible(true);
-				    single.setContext(new ClassPathXmlApplicationContext("context-core.xml"));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -90,8 +92,18 @@ public class Principal extends JFrame {
 				cargarJpanel(addCuenta);
 			}
 		});
-		mnNuevo.add(mntmAddCuenta);	
+		mnNuevo.add(mntmAddCuenta);
 		
+		JMenu mnAceder = new JMenu("Ingresar");
+		mnOpciones.add(mnAceder);
+		
+		JMenuItem menuIngCuenta = new JMenuItem("Cuenta");
+		mnAceder.add(menuIngCuenta);
+		menuIngCuenta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cargarJpanel(cuentasPane);
+			}
+		});
 		cargarJpanelPrincipal();
 	}
 	
@@ -112,4 +124,6 @@ public class Principal extends JFrame {
 		contentPane.setVisible(true);
 		contentPane.repaint();
 	}
+	
+	
 }

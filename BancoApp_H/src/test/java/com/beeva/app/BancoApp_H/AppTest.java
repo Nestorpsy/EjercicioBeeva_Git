@@ -1,7 +1,5 @@
 package com.beeva.app.BancoApp_H;
 
-import java.util.List;
-
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.beeva.app.BancoApp_H.dao.BancoDAO;
@@ -40,8 +38,8 @@ public class AppTest extends TestCase{
     public void getAllBancos(){
     	System.out.println("Hola de prueba getAllBancos");
     	BancoDAO dao = (BancoImpl) single.getContext().getBean(BancoImpl.class);
-    	String bancos = dao.getAllBanco();
-    	System.out.println(bancos);
+    	
+    	System.out.println(dao.getAllBanco());
     }
     
     public void addUsuarios(){

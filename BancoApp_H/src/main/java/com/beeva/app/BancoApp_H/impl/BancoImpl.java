@@ -22,7 +22,6 @@ public class BancoImpl extends BancoDAO{
 	@Transactional
 	public void addBanco(Banco banco) {
 		try {		
-			manager.flush();
 			manager.persist(banco);	
 			mongo.mandarLog(banco,"addBanco");
 		} catch (Exception e) {			
@@ -35,7 +34,7 @@ public class BancoImpl extends BancoDAO{
 	@Transactional
 	public Banco getBanco(int idbanco) {
 		try {			
-			return null;//manager.find(Banco.class, idbanco);			
+			return manager.find(Banco.class, idbanco);			
 		} catch (Exception e) {
 			System.out.println("BancoImpl.getBanco()");
 			e.printStackTrace();
@@ -58,23 +57,16 @@ public class BancoImpl extends BancoDAO{
 
 	@Override
 	@Transactional
-	public String getAllBanco() {
+	public List<Banco> getAllBanco() {
 		try {
-			String todo= "";
-			
-		      Query query = manager.createQuery("Select UPPER(e.nombre) from Banco e");
-		      List<String> list=query.getResultList();
-		      for(String e:list)
-		      {
-		    	 todo=todo+" "+e+"\n";
-		         System.out.println("Employee NAME :"+e);
-		      }
-			return todo;
+		      Query query = manager.createQuery("from Banco");
+		      @SuppressWarnings("unchecked")
+			List<Banco> list=query.getResultList();
+			return list;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
-	
 	}
 
 }
