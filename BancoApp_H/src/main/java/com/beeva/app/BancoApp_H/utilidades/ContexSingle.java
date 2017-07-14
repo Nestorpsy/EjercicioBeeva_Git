@@ -1,7 +1,6 @@
 package com.beeva.app.BancoApp_H.utilidades;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ContexSingle {
 	private static ContexSingle instance;

@@ -1,16 +1,17 @@
 package com.beeva.app.BancoApp_H.gui;
 
-import javax.swing.JPanel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.beeva.app.BancoApp_H.dao.BancoDAO;
 import com.beeva.app.BancoApp_H.impl.BancoImpl;
 import com.beeva.app.BancoApp_H.modelo.Banco;
 import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
-
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class AddBanco extends JPanel {
 	private JTextField textFieldNombreAddBanco;
@@ -38,9 +39,9 @@ public class AddBanco extends JPanel {
 		btnGuardarAddBanco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 		    	Banco banco = new Banco();
-		    	BancoImpl impl = (BancoImpl) single.getContext().getBean(BancoImpl.class);
+		    	BancoDAO dao = (BancoImpl) single.getContext().getBean(BancoImpl.class);
 		    	banco.setNombre(textFieldNombreAddBanco.getText());
-		    	impl.addBanco(banco);
+		    	dao.addBanco(banco);
 		    	textFieldNombreAddBanco.setText("");
 			}
 		});

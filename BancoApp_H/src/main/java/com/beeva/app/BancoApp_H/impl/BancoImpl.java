@@ -1,7 +1,10 @@
 package com.beeva.app.BancoApp_H.impl;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,14 +21,13 @@ public class BancoImpl extends BancoDAO{
 	@Override
 	@Transactional
 	public void addBanco(Banco banco) {
-		try {			
+		try {		
+			manager.flush();
 			manager.persist(banco);	
 			mongo.mandarLog(banco,"addBanco");
 		} catch (Exception e) {			
 			System.out.println("BancoImpl.addBanco()");
 			e.printStackTrace();
-		}finally {			
-			manager.clear();
 		}		
 	}
 
@@ -33,13 +35,11 @@ public class BancoImpl extends BancoDAO{
 	@Transactional
 	public Banco getBanco(int idbanco) {
 		try {			
-			return manager.find(Banco.class, idbanco);			
+			return null;//manager.find(Banco.class, idbanco);			
 		} catch (Exception e) {
 			System.out.println("BancoImpl.getBanco()");
 			e.printStackTrace();
 			return null;
-		}finally {
-			manager.clear();
 		}
 		
 	}
@@ -53,9 +53,28 @@ public class BancoImpl extends BancoDAO{
 		} catch (Exception e) {
 			System.out.println("BancoImpl.deletBanco()");	
 			e.printStackTrace();
-		}finally {
-			manager.clear();
 		}
+	}
+
+	@Override
+	@Transactional
+	public String getAllBanco() {
+		try {
+			String todo= "";
+			
+		      Query query = manager.createQuery("Select UPPER(e.nombre) from Banco e");
+		      List<String> list=query.getResultList();
+		      for(String e:list)
+		      {
+		    	 todo=todo+" "+e+"\n";
+		         System.out.println("Employee NAME :"+e);
+		      }
+			return todo;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	
 	}
 
 }

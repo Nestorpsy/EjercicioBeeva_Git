@@ -23,8 +23,6 @@ public class TipoDeCuentaImpl extends TipoDeCuentaDAO{
 			System.out.println("TipoDeCuentaImpl.getTipoDeCuenta()");
 			e.printStackTrace();
 			return null;
-		}finally {
-			manager.clear();
 		}
 	}
 

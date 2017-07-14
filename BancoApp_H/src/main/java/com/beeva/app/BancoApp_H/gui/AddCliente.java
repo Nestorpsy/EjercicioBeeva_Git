@@ -1,20 +1,18 @@
 package com.beeva.app.BancoApp_H.gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.beeva.app.BancoApp_H.impl.BancoImpl;
+import com.beeva.app.BancoApp_H.dao.ClienteDAO;
 import com.beeva.app.BancoApp_H.impl.ClienteImpl;
-import com.beeva.app.BancoApp_H.modelo.Banco;
 import com.beeva.app.BancoApp_H.modelo.Cliente;
 import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
-
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import java.awt.FlowLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class AddCliente extends JPanel {
 	private JTextField textFieldApellidoAddCliente;
@@ -53,10 +51,10 @@ public class AddCliente extends JPanel {
         btnAddCliente.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		Cliente cliente = new Cliente();
-        		ClienteImpl impl = (ClienteImpl) single.getContext().getBean(ClienteImpl.class);
+        		ClienteDAO dao = (ClienteImpl) single.getContext().getBean(ClienteImpl.class);
         		cliente.setNombre(textfieldNombreAddCliente.getText());
         		cliente.setApellido(textFieldApellidoAddCliente.getText());
-        		impl.addCiente(cliente);
+        		dao.addCiente(cliente);
         		textfieldNombreAddCliente.setText("");
         		textFieldApellidoAddCliente.setText("");
         	}

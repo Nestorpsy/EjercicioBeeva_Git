@@ -5,7 +5,7 @@
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">	
 		
 		<context:annotation-config/>	
 		<context:component-scan base-package="com.beeva.app.BancoApp_H.impl"></context:component-scan>
@@ -33,5 +33,26 @@
 			<constructor-arg name="host" value="localhost"/>
 			<constructor-arg name="port" value="27017"/>
 		</bean>
-				
+		
+		<!-- 
+		<bean id="myClienteDao" class="com.beeva.app.BancoApp_H.impl.ClienteImpl">
+	    	<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	  	</bean>
+
+		<bean id="myCuentaDao" class="com.beeva.app.BancoApp_H.impl.CuentaImpl">
+			<property name="entityManagerFactory" ref="entityManagerFactory" />
+		</bean>
+		
+		<bean id="myBancoClientesDAO" class="com.beeva.app.BancoApp_H.impl.BancoClientesImpl">
+			<property name="entityManagerFactory" ref="entityManagerFactory" />
+		</bean>
+		
+		<bean id="myBancoDAO" class="com.beeva.app.BancoApp_H.impl.BancoImpl">
+			<property name="entityManagerFactory" ref="entityManagerFactory" />
+		</bean>
+		
+		<bean id="myTipoDeCuentaDAO" class="com.beeva.app.BancoApp_H.impl.TipoDeCuentaImpl">
+			<property name="entityManagerFactory" ref="entityManagerFactory" />
+		</bean>
+			 -->
 </beans>

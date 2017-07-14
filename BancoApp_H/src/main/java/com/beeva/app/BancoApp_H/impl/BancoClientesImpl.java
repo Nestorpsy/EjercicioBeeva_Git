@@ -1,7 +1,8 @@
 package com.beeva.app.BancoApp_H.impl;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +13,6 @@ import com.beeva.app.BancoApp_H.utilidades.MongoUtil;
 
 @Repository
 public class BancoClientesImpl extends BancosClientesDAO{
-	@PersistenceContext
 	EntityManager manager;
 	MongoUtil mongo = new MongoUtil();	
 	@Override
@@ -24,8 +24,6 @@ public class BancoClientesImpl extends BancosClientesDAO{
 		} catch (Exception e) {
 			System.out.println("BancoClientesImpl.addBancoClientes()");		
 			e.printStackTrace();
-		}finally {
-			manager.clear();
 		}		
 	}
 
@@ -38,8 +36,6 @@ public class BancoClientesImpl extends BancosClientesDAO{
 			System.out.println("BancoClientesImpl.getBancosClientes()");
 			e.printStackTrace();
 			return null;
-		}finally {
-			manager.clear();
 		}
 	}
 

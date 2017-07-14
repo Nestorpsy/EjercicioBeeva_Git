@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.beeva.app.BancoApp_H.AppTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="1" failures="1" name="com.beeva.app.BancoApp_H.AppTest" time="0.021" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jre1.8.0_131\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Users\administradorcito\workspace_viejo\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf604988751190355781.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\administradorcito\workspace_viejo\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf7602393918574153034.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jre1.8.0_131\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_131/bin/server;C:/Program Files/Java/jre1.8.0_131/bin;C:/Program Files/Java/jre1.8.0_131/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Git\cmd;C:\Programacion\apache-maven-3.5.0\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\administradorcito\AppData\Local\Microsoft\WindowsApps;C:\Users\administradorcito\AppData\Local\atom\bin;C:\Programacion\apache-maven-3.5.0\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Programacion\eclipse neon;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -62,5 +62,201 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.beeva.app.BancoApp_H.AppTest" name="testApp" time="0.002"/>
+  <testcase classname="junit.framework.TestSuite$1" name="warning" time="0.021">
+    <failure message="Exception in constructor: testApp (java.lang.IllegalArgumentException: org.hibernate.hql.ast.QuerySyntaxException: banco is not mapped [from banco]
+	at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1374)
+	at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1315)
+	at org.hibernate.ejb.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:280)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy17.createQuery(Unknown Source)
+	at com.beeva.app.BancoApp_H.impl.BancoImpl.getAllBanco(BancoImpl.java:63)
+	at com.beeva.app.BancoApp_H.impl.BancoImpl$$FastClassBySpringCGLIB$$12e7ca11.invoke(&lt;generated&gt;)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.beeva.app.BancoApp_H.impl.BancoImpl$$EnhancerBySpringCGLIB$$2ada4de5.getAllBanco(&lt;generated&gt;)
+	at com.beeva.app.BancoApp_H.AppTest.getAllBancos(AppTest.java:43)
+	at com.beeva.app.BancoApp_H.AppTest.&lt;init&gt;(AppTest.java:37)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at junit.framework.TestSuite.createTest(TestSuite.java:65)
+	at junit.framework.TestSuite.addTestMethod(TestSuite.java:307)
+	at junit.framework.TestSuite.addTestsFromTestCase(TestSuite.java:150)
+	at junit.framework.TestSuite.&lt;init&gt;(TestSuite.java:129)
+	at com.beeva.app.BancoApp_H.AppTest.suite(AppTest.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.internal.runners.SuiteMethod.testFromSuiteMethod(SuiteMethod.java:35)
+	at org.junit.internal.runners.SuiteMethod.&lt;init&gt;(SuiteMethod.java:24)
+	at org.junit.internal.builders.SuiteMethodBuilder.runnerForClass(SuiteMethodBuilder.java:11)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:250)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.hibernate.hql.ast.QuerySyntaxException: banco is not mapped [from banco]
+	at org.hibernate.hql.ast.util.SessionFactoryHelper.requireClassPersister(SessionFactoryHelper.java:180)
+	at org.hibernate.hql.ast.tree.FromElementFactory.addFromElement(FromElementFactory.java:111)
+	at org.hibernate.hql.ast.tree.FromClause.addFromElement(FromClause.java:93)
+	at org.hibernate.hql.ast.HqlSqlWalker.createFromElement(HqlSqlWalker.java:327)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.fromElement(HqlSqlBaseWalker.java:3441)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.fromElementList(HqlSqlBaseWalker.java:3325)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.fromClause(HqlSqlBaseWalker.java:733)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:584)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:301)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:244)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:256)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:187)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:138)
+	at org.hibernate.engine.query.HQLQueryPlan.&lt;init&gt;(HQLQueryPlan.java:101)
+	at org.hibernate.engine.query.HQLQueryPlan.&lt;init&gt;(HQLQueryPlan.java:80)
+	at org.hibernate.engine.query.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:124)
+	at org.hibernate.impl.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:156)
+	at org.hibernate.impl.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:135)
+	at org.hibernate.impl.SessionImpl.createQuery(SessionImpl.java:1770)
+	at org.hibernate.ejb.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:277)
+	... 51 more
+)" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Exception in constructor: testApp (java.lang.IllegalArgumentException: org.hibernate.hql.ast.QuerySyntaxException: banco is not mapped [from banco]
+	at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1374)
+	at org.hibernate.ejb.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1315)
+	at org.hibernate.ejb.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:280)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy17.createQuery(Unknown Source)
+	at com.beeva.app.BancoApp_H.impl.BancoImpl.getAllBanco(BancoImpl.java:63)
+	at com.beeva.app.BancoApp_H.impl.BancoImpl$$FastClassBySpringCGLIB$$12e7ca11.invoke(&lt;generated&gt;)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.beeva.app.BancoApp_H.impl.BancoImpl$$EnhancerBySpringCGLIB$$2ada4de5.getAllBanco(&lt;generated&gt;)
+	at com.beeva.app.BancoApp_H.AppTest.getAllBancos(AppTest.java:43)
+	at com.beeva.app.BancoApp_H.AppTest.&lt;init&gt;(AppTest.java:37)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at junit.framework.TestSuite.createTest(TestSuite.java:65)
+	at junit.framework.TestSuite.addTestMethod(TestSuite.java:307)
+	at junit.framework.TestSuite.addTestsFromTestCase(TestSuite.java:150)
+	at junit.framework.TestSuite.&lt;init&gt;(TestSuite.java:129)
+	at com.beeva.app.BancoApp_H.AppTest.suite(AppTest.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.internal.runners.SuiteMethod.testFromSuiteMethod(SuiteMethod.java:35)
+	at org.junit.internal.runners.SuiteMethod.&lt;init&gt;(SuiteMethod.java:24)
+	at org.junit.internal.builders.SuiteMethodBuilder.runnerForClass(SuiteMethodBuilder.java:11)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:250)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.hibernate.hql.ast.QuerySyntaxException: banco is not mapped [from banco]
+	at org.hibernate.hql.ast.util.SessionFactoryHelper.requireClassPersister(SessionFactoryHelper.java:180)
+	at org.hibernate.hql.ast.tree.FromElementFactory.addFromElement(FromElementFactory.java:111)
+	at org.hibernate.hql.ast.tree.FromClause.addFromElement(FromClause.java:93)
+	at org.hibernate.hql.ast.HqlSqlWalker.createFromElement(HqlSqlWalker.java:327)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.fromElement(HqlSqlBaseWalker.java:3441)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.fromElementList(HqlSqlBaseWalker.java:3325)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.fromClause(HqlSqlBaseWalker.java:733)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:584)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:301)
+	at org.hibernate.hql.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:244)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:256)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:187)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:138)
+	at org.hibernate.engine.query.HQLQueryPlan.&lt;init&gt;(HQLQueryPlan.java:101)
+	at org.hibernate.engine.query.HQLQueryPlan.&lt;init&gt;(HQLQueryPlan.java:80)
+	at org.hibernate.engine.query.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:124)
+	at org.hibernate.impl.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:156)
+	at org.hibernate.impl.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:135)
+	at org.hibernate.impl.SessionImpl.createQuery(SessionImpl.java:1770)
+	at org.hibernate.ejb.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:277)
+	... 51 more
+)
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at junit.framework.TestSuite$1.runTest(TestSuite.java:97)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:252)
+	at junit.framework.TestSuite.run(TestSuite.java:247)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:86)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+    <system-out>Hola de prueba getAllBancos
+</system-out>
+    <system-err>jul 13, 2017 7:21:50 PM org.springframework.context.support.ClassPathXmlApplicationContext prepareRefresh
+INFORMACIÓN: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@38cccef: startup date [Thu Jul 13 19:21:50 CDT 2017]; root of context hierarchy
+jul 13, 2017 7:21:50 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFORMACIÓN: Loading XML bean definitions from class path resource [context-core.xml]
+jul 13, 2017 7:21:50 PM org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
+INFORMACIÓN: Loaded JDBC driver: com.mysql.jdbc.Driver
+jul 13, 2017 7:21:50 PM org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean createNativeEntityManagerFactory
+INFORMACIÓN: Building JPA container EntityManagerFactory for persistence unit &apos;pruebaSH&apos;
+SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+jul 13, 2017 7:21:52 PM org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory
+INFORMACIÓN: Initialized JPA EntityManagerFactory for persistence unit &apos;pruebaSH&apos;
+</system-err>
+  </testcase>
 </testsuite>

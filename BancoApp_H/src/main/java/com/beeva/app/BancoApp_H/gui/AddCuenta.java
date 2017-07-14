@@ -1,22 +1,19 @@
 package com.beeva.app.BancoApp_H.gui;
 
-import javax.swing.JPanel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import com.beeva.app.BancoApp_H.dao.ClienteDAO;
-import com.beeva.app.BancoApp_H.impl.BancoImpl;
 import com.beeva.app.BancoApp_H.impl.ClienteImpl;
-import com.beeva.app.BancoApp_H.impl.CuentaImpl;
 import com.beeva.app.BancoApp_H.modelo.Cliente;
-import com.beeva.app.BancoApp_H.modelo.Cuenta;
 import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
-
-import javax.swing.JRadioButton;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JComboBox;
 
 public class AddCuenta extends JPanel {
 	private JTextField textFieldNumeroDeClienteAddCuenta;
@@ -61,11 +58,11 @@ public class AddCuenta extends JPanel {
 		JButton btnConsultarCliente = new JButton("Consultar Cliente");
 		btnConsultarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ClienteImpl impl = new ClienteImpl();
-				String idCuenta = textFieldNumeroDeClienteAddCuenta.getText();
-				Cliente clienteDatos = impl.getCliente(Integer.parseInt(idCuenta));
-				cliente = clienteDatos.getNombre()+" "+clienteDatos.getApellido();
-				lblNewLabel.setText("Cliente: "+cliente);
+		    	ClienteDAO dao = (ClienteImpl) single.getContext().getBean(ClienteImpl.class);
+		    	Cliente cliente = dao.getCliente(Integer.parseInt(textFieldNumeroDeClienteAddCuenta.getText()));	
+		    	String datos;		    	
+		    	datos = cliente.getNombre()+" "+cliente.getApellido();
+				lblNewLabel.setText("Cliente: "+datos);
 			}
 		});
 		btnConsultarCliente.setBounds(161, 149, 153, 25);

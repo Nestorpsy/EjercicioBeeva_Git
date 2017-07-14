@@ -25,9 +25,7 @@ public class ClienteImpl extends ClienteDAO{
 		} catch (Exception e) {
 			System.out.println("ClienteImpl.addCiente()");
 			e.printStackTrace();
-			}finally {
-			manager.clear();
-		}
+			}
 	}
 
 	@Override
@@ -35,7 +33,7 @@ public class ClienteImpl extends ClienteDAO{
 	public Cliente getCliente(int idcliente) {		
 		try {			
 			Cliente getcliente = new Cliente();
-			getcliente=manager.find(Cliente.class,  idcliente);
+			getcliente=manager.find(Cliente.class, idcliente);
 			return getcliente;
 		} catch (Exception e) {
 			System.out.println("ClienteImpl.getCliente()");
@@ -55,8 +53,6 @@ public class ClienteImpl extends ClienteDAO{
 		} catch (Exception e) {
 			System.out.println("ClienteImpl.updateCliente()");
 			e.printStackTrace();
-		}finally {
-			manager.clear();
 		}
 	}
 

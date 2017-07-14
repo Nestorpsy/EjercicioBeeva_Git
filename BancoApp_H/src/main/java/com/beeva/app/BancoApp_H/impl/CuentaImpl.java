@@ -24,8 +24,6 @@ public class CuentaImpl extends CuentaDAO{
 		} catch (Exception e) {
 			System.out.println("CuentaImpl.addCuenta()");
 			e.printStackTrace();
-		}finally {
-			manager.clear();
 		}
 	}
 
@@ -38,8 +36,6 @@ public class CuentaImpl extends CuentaDAO{
 			System.out.println("CuentaImpl.getCuenta()");
 			e.printStackTrace();
 			return null;
-		}finally {
-			manager.clear();
 		}
 	}
 
@@ -53,8 +49,6 @@ public class CuentaImpl extends CuentaDAO{
 		} catch (Exception e) {
 			System.out.println("CuentaImpl.updateCuenta()");
 			e.printStackTrace();
-		}finally {
-			manager.clear();
 		}
 	}	
 }
