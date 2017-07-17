@@ -1,11 +1,11 @@
-package com.beeva.app.BancoApp_H.impl;
+package com.beeva.app.bancoapp_h.impl;
 
 import javax.swing.JOptionPane;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.beeva.app.BancoApp_H.dao.CuentaTipoDAO;
-import com.beeva.app.BancoApp_H.modelo.Cuenta;
+import com.beeva.app.bancoapp_h.dao.CuentaTipoDAO;
+import com.beeva.app.bancoapp_h.modelo.Cuenta;
 
 public class CuentaAhorro implements CuentaTipoDAO{
 

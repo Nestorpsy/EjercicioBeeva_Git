@@ -1,4 +1,4 @@
-package com.beeva.app.BancoApp_H.modelo;
+package com.beeva.app.bancoapp_h.modelo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

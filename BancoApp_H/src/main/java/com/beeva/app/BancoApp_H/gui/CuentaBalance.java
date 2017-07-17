@@ -1,12 +1,12 @@
-package com.beeva.app.BancoApp_H.gui;
+package com.beeva.app.bancoapp_h.gui;
 
-import com.beeva.app.BancoApp_H.dao.CuentaDAO;
-import com.beeva.app.BancoApp_H.dao.CuentaTipoDAO;
-import com.beeva.app.BancoApp_H.factory.CuentaFactory;
-import com.beeva.app.BancoApp_H.impl.CuentaImpl;
-import com.beeva.app.BancoApp_H.modelo.Cliente;
-import com.beeva.app.BancoApp_H.modelo.Cuenta;
-import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
+import com.beeva.app.bancoapp_h.dao.CuentaDAO;
+import com.beeva.app.bancoapp_h.dao.CuentaTipoDAO;
+import com.beeva.app.bancoapp_h.factory.CuentaFactory;
+import com.beeva.app.bancoapp_h.impl.CuentaImpl;
+import com.beeva.app.bancoapp_h.modelo.Cliente;
+import com.beeva.app.bancoapp_h.modelo.Cuenta;
+import com.beeva.app.bancoapp_h.utilidades.ContexSingle;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;

@@ -1,4 +1,4 @@
-package com.beeva.app.BancoApp_H.gui;
+package com.beeva.app.bancoapp_h.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,23 +9,23 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.beeva.app.BancoApp_H.dao.BancoDAO;
-import com.beeva.app.BancoApp_H.dao.BancosClientesDAO;
-import com.beeva.app.BancoApp_H.dao.ClienteDAO;
-import com.beeva.app.BancoApp_H.dao.CuentaDAO;
-import com.beeva.app.BancoApp_H.dao.TipoDeCuentaDAO;
-import com.beeva.app.BancoApp_H.impl.BancoClientesImpl;
-import com.beeva.app.BancoApp_H.impl.BancoImpl;
-import com.beeva.app.BancoApp_H.impl.ClienteImpl;
-import com.beeva.app.BancoApp_H.impl.CuentaImpl;
-import com.beeva.app.BancoApp_H.impl.TipoDeCuentaImpl;
-import com.beeva.app.BancoApp_H.modelo.Banco;
-import com.beeva.app.BancoApp_H.modelo.BancosClientes;
-import com.beeva.app.BancoApp_H.modelo.Cliente;
-import com.beeva.app.BancoApp_H.modelo.Cuenta;
-import com.beeva.app.BancoApp_H.modelo.TipoDeCuenta;
-import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
-import com.beeva.app.BancoApp_H.utilidades.ComboBox;
+import com.beeva.app.bancoapp_h.dao.BancoDAO;
+import com.beeva.app.bancoapp_h.dao.BancosClientesDAO;
+import com.beeva.app.bancoapp_h.dao.ClienteDAO;
+import com.beeva.app.bancoapp_h.dao.CuentaDAO;
+import com.beeva.app.bancoapp_h.dao.TipoDeCuentaDAO;
+import com.beeva.app.bancoapp_h.impl.BancoClientesImpl;
+import com.beeva.app.bancoapp_h.impl.BancoImpl;
+import com.beeva.app.bancoapp_h.impl.ClienteImpl;
+import com.beeva.app.bancoapp_h.impl.CuentaImpl;
+import com.beeva.app.bancoapp_h.impl.TipoDeCuentaImpl;
+import com.beeva.app.bancoapp_h.modelo.Banco;
+import com.beeva.app.bancoapp_h.modelo.BancosClientes;
+import com.beeva.app.bancoapp_h.modelo.Cliente;
+import com.beeva.app.bancoapp_h.modelo.Cuenta;
+import com.beeva.app.bancoapp_h.modelo.TipoDeCuenta;
+import com.beeva.app.bancoapp_h.utilidades.ContexSingle;
+import com.beeva.app.bancoapp_h.utilidades.ComboBox;
 public class AddCuenta extends JPanel {
 	/**
 	 * 
@@ -36,7 +36,6 @@ public class AddCuenta extends JPanel {
 	private JComboBox<String> comboBoxBanco;
 	private JComboBox<String> comboBoxIDClienteAddCuenta;
 	private JComboBox<String> comboBoxTipoCuenta;
-	ContexSingle single = ContexSingle.getInstance();
 	/**
 	 * Create the panel.
 	 */
@@ -63,7 +62,7 @@ public class AddCuenta extends JPanel {
 		JButton btnConsultarCliente = new JButton("Consultar Cliente");
 		btnConsultarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		    	ClienteDAO dao = (ClienteImpl) single.getContext().getBean(ClienteImpl.class);	
+		    	ClienteDAO dao = (ClienteImpl) getContexIniciado().getContext().getBean(ClienteImpl.class);	
 		    	String id = comboBoxIDClienteAddCuenta.getSelectedItem().toString();
 		    	Cliente cliente = dao.getCliente(Integer.parseInt(id));	
 		    	String datos;		    	
@@ -84,7 +83,7 @@ public class AddCuenta extends JPanel {
 				/*
 				 * Se genera el id de Cuneta por Nombre 
 				 */
-				TipoDeCuentaDAO tipoDeCuentaDAO = (TipoDeCuentaImpl) single.getContext().getBean(TipoDeCuentaImpl.class);
+				TipoDeCuentaDAO tipoDeCuentaDAO = (TipoDeCuentaImpl) getContexIniciado().getContext().getBean(TipoDeCuentaImpl.class);
 				int idTipocuenta = 0;				
 				List<TipoDeCuenta> listTipoCuenta = tipoDeCuentaDAO.getAllTipoDeCuenta();				
 				for (TipoDeCuenta e : listTipoCuenta) {					
@@ -100,13 +99,13 @@ public class AddCuenta extends JPanel {
 				cuenta.setBalance(0.0);
 				cuenta.setIdcliente(clienteId);
 				cuenta.setIdtipocuenta(idTipocuenta);				
-				CuentaDAO cuentaDAO = (CuentaImpl) single.getContext().getBean(CuentaImpl.class);				
+				CuentaDAO cuentaDAO = (CuentaImpl) getContexIniciado().getContext().getBean(CuentaImpl.class);				
 				cuentaDAO.addCuenta(cuenta);			
 	
 				/*
 				 * Se genera id de Banco por nombre
 				 */
-				BancoDAO bancoDAO = (BancoImpl) single.getContext().getBean(BancoImpl.class);
+				BancoDAO bancoDAO = (BancoImpl) getContexIniciado().getContext().getBean(BancoImpl.class);
 				int idBanco=0;				
 				List<Banco> list = bancoDAO.getAllBanco();
 				for (Banco e : list) {
@@ -122,7 +121,7 @@ public class AddCuenta extends JPanel {
 				bancosClientes.setIdbanco(getComponentCount());
 				bancosClientes.setIdbanco(idBanco);
 				bancosClientes.setIdcliente(clienteId);
-				BancosClientesDAO bancosClientesDAO = (BancoClientesImpl) single.getContext().getBean(BancoClientesImpl.class);
+				BancosClientesDAO bancosClientesDAO = (BancoClientesImpl) getContexIniciado().getContext().getBean(BancoClientesImpl.class);
 				bancosClientesDAO.addBancoClientes(bancosClientes);			
 				comboBoxBanco.setSelectedIndex(0);		
 				comboBoxIDClienteAddCuenta.setSelectedIndex(0);		
@@ -150,4 +149,9 @@ public class AddCuenta extends JPanel {
 		comboBoxIDClienteAddCuenta.getSelectedItem();
 
 	}	
+	
+	public ContexSingle getContexIniciado(){
+		ContexSingle single = ContexSingle.getInstance();
+		return single;
+	}
 }

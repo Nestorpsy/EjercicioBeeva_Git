@@ -1,4 +1,4 @@
-package com.beeva.app.BancoApp_H.impl;
+package com.beeva.app.bancoapp_h.impl;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.beeva.app.BancoApp_H.dao.CuentaDAO;
-import com.beeva.app.BancoApp_H.modelo.Cuenta;
-import com.beeva.app.BancoApp_H.utilidades.MongoUtil;
+import com.beeva.app.bancoapp_h.dao.CuentaDAO;
+import com.beeva.app.bancoapp_h.modelo.Cuenta;
+import com.beeva.app.bancoapp_h.utilidades.MongoUtil;
 
 @Repository
 public class CuentaImpl extends CuentaDAO{

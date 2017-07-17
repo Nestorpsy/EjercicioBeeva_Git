@@ -1,4 +1,4 @@
-package com.beeva.app.BancoApp_H.impl;
+package com.beeva.app.bancoapp_h.impl;
 
 
 import java.util.List;
@@ -7,15 +7,19 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.beeva.app.BancoApp_H.dao.ClienteDAO;
-import com.beeva.app.BancoApp_H.modelo.Cliente;
-import com.beeva.app.BancoApp_H.utilidades.MongoUtil;
+import com.beeva.app.bancoapp_h.dao.ClienteDAO;
+import com.beeva.app.bancoapp_h.modelo.Cliente;
+import com.beeva.app.bancoapp_h.utilidades.MongoUtil;
 
 @Repository
 public class ClienteImpl extends ClienteDAO{
+	Logger logger = LoggerFactory.getLogger(ClienteImpl.class);
+	private static final String error = "Contex"; 
 	@PersistenceContext
 	EntityManager manager;
 	MongoUtil mongo = new MongoUtil();
@@ -26,22 +30,20 @@ public class ClienteImpl extends ClienteDAO{
 			manager.persist(cliente);
 			mongo.mandarLog(cliente, "addCiente");
 		} catch (Exception e) {
-			System.out.println("ClienteImpl.addCiente()");
-			e.printStackTrace();
+			logger.error("ClienteImpl.addCiente()");
+			logger.debug(error, e);
 			}
 	}
 
 	@Override
 	@Transactional
 	public Cliente getCliente(int idcliente) {		
-		try {			
-			Cliente getcliente = new Cliente();
-			getcliente=manager.find(Cliente.class, idcliente);
-			return getcliente;
+		try {
+			return manager.find(Cliente.class, idcliente);
 		} catch (Exception e) {
-			System.out.println("ClienteImpl.getCliente()");
-			e.printStackTrace();
-			return null;
+			logger.error("ClienteImpl.getCliente()");
+			logger.debug(error, e);			
+			throw new RuntimeException();
 		}
 	}
 
@@ -52,8 +54,8 @@ public class ClienteImpl extends ClienteDAO{
 			manager.merge(cliente);
 			mongo.mandarLog(cliente, "updateCliente");
 		} catch (Exception e) {
-			System.out.println("ClienteImpl.updateCliente()");
-			e.printStackTrace();
+			logger.error("ClienteImpl.updateCliente()");
+			logger.debug(error, e);
 		}
 	}
 
@@ -66,9 +68,9 @@ public class ClienteImpl extends ClienteDAO{
 			List<Cliente> list=query.getResultList();
 			return list;
 		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
+			logger.error("ClienteImpl.getAllCliente()"+e);
+			logger.debug(error, e);
+			throw new RuntimeException();
 		}
 	}
-
 }

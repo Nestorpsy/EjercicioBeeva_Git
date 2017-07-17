@@ -1,9 +1,9 @@
-package com.beeva.app.BancoApp_H;
+package com.beeva.app.bancoapp_h;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.beeva.app.BancoApp_H.gui.Principal;
-import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
+import com.beeva.app.bancoapp_h.gui.Principal;
+import com.beeva.app.bancoapp_h.utilidades.ContexSingle;
 
 /**
  * Hello world!

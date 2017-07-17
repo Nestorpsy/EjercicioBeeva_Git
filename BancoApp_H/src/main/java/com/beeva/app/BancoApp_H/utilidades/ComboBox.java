@@ -1,17 +1,17 @@
-package com.beeva.app.BancoApp_H.utilidades;
+package com.beeva.app.bancoapp_h.utilidades;
 import java.util.List;
 
 import javax.swing.JComboBox;
 
-import com.beeva.app.BancoApp_H.dao.BancoDAO;
-import com.beeva.app.BancoApp_H.dao.ClienteDAO;
-import com.beeva.app.BancoApp_H.dao.TipoDeCuentaDAO;
-import com.beeva.app.BancoApp_H.impl.BancoImpl;
-import com.beeva.app.BancoApp_H.impl.ClienteImpl;
-import com.beeva.app.BancoApp_H.impl.TipoDeCuentaImpl;
-import com.beeva.app.BancoApp_H.modelo.Banco;
-import com.beeva.app.BancoApp_H.modelo.Cliente;
-import com.beeva.app.BancoApp_H.modelo.TipoDeCuenta;
+import com.beeva.app.bancoapp_h.dao.BancoDAO;
+import com.beeva.app.bancoapp_h.dao.ClienteDAO;
+import com.beeva.app.bancoapp_h.dao.TipoDeCuentaDAO;
+import com.beeva.app.bancoapp_h.impl.BancoImpl;
+import com.beeva.app.bancoapp_h.impl.ClienteImpl;
+import com.beeva.app.bancoapp_h.impl.TipoDeCuentaImpl;
+import com.beeva.app.bancoapp_h.modelo.Banco;
+import com.beeva.app.bancoapp_h.modelo.Cliente;
+import com.beeva.app.bancoapp_h.modelo.TipoDeCuenta;
 
 public final class ComboBox {
 	static ContexSingle single = ContexSingle.getInstance();

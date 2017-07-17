@@ -1,8 +1,8 @@
-package com.beeva.app.BancoApp_H.dao;
+package com.beeva.app.bancoapp_h.dao;
 
 import java.util.List;
 
-import com.beeva.app.BancoApp_H.modelo.Cuenta;
+import com.beeva.app.bancoapp_h.modelo.Cuenta;
 
 public abstract class CuentaDAO {
 	public abstract void addCuenta(Cuenta cuenta);

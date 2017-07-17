@@ -1,14 +1,12 @@
-package com.beeva.app.BancoApp_H.utilidades;
+package com.beeva.app.bancoapp_h.utilidades;
 import java.util.List;
-import java.util.Vector;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import com.beeva.app.BancoApp_H.dao.CuentaDAO;
-import com.beeva.app.BancoApp_H.impl.ClienteImpl;
-import com.beeva.app.BancoApp_H.impl.CuentaImpl;
-import com.beeva.app.BancoApp_H.modelo.Cuenta;
+import com.beeva.app.bancoapp_h.dao.CuentaDAO;
+import com.beeva.app.bancoapp_h.impl.CuentaImpl;
+import com.beeva.app.bancoapp_h.modelo.Cuenta;
 
 public final class Tablas {
 	static ContexSingle single = ContexSingle.getInstance();

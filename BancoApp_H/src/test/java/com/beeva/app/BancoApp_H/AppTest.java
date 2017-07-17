@@ -1,14 +1,16 @@
-package com.beeva.app.BancoApp_H;
+package com.beeva.app.bancoapp_h;
+
+import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.beeva.app.BancoApp_H.dao.BancoDAO;
-import com.beeva.app.BancoApp_H.dao.ClienteDAO;
-import com.beeva.app.BancoApp_H.impl.BancoImpl;
-import com.beeva.app.BancoApp_H.impl.ClienteImpl;
-import com.beeva.app.BancoApp_H.modelo.Banco;
-import com.beeva.app.BancoApp_H.modelo.Cliente;
-import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
+import com.beeva.app.bancoapp_h.dao.BancoDAO;
+import com.beeva.app.bancoapp_h.dao.ClienteDAO;
+import com.beeva.app.bancoapp_h.impl.BancoImpl;
+import com.beeva.app.bancoapp_h.impl.ClienteImpl;
+import com.beeva.app.bancoapp_h.modelo.Banco;
+import com.beeva.app.bancoapp_h.modelo.Cliente;
+import com.beeva.app.bancoapp_h.utilidades.ContexSingle;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -38,7 +40,7 @@ public class AppTest extends TestCase{
     public void getAllBancos(){
     	System.out.println("Hola de prueba getAllBancos");
     	BancoDAO dao = (BancoImpl) single.getContext().getBean(BancoImpl.class);
-    	
+    	List<Banco> list = dao.getAllBanco();
     	System.out.println(dao.getAllBanco());
     }
     

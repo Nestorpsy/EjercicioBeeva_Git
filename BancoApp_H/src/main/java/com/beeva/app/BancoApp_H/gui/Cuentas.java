@@ -1,15 +1,15 @@
-package com.beeva.app.BancoApp_H.gui;
+package com.beeva.app.bancoapp_h.gui;
 
 import javax.swing.JPanel;
 import javax.swing.JTable;
 
-import com.beeva.app.BancoApp_H.modelo.Cuenta;
-import com.beeva.app.BancoApp_H.dao.ClienteDAO;
-import com.beeva.app.BancoApp_H.dao.CuentaDAO;
-import com.beeva.app.BancoApp_H.impl.ClienteImpl;
-import com.beeva.app.BancoApp_H.impl.CuentaImpl;
-import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
-import com.beeva.app.BancoApp_H.utilidades.Tablas;
+import com.beeva.app.bancoapp_h.modelo.Cuenta;
+import com.beeva.app.bancoapp_h.dao.ClienteDAO;
+import com.beeva.app.bancoapp_h.dao.CuentaDAO;
+import com.beeva.app.bancoapp_h.impl.ClienteImpl;
+import com.beeva.app.bancoapp_h.impl.CuentaImpl;
+import com.beeva.app.bancoapp_h.utilidades.ContexSingle;
+import com.beeva.app.bancoapp_h.utilidades.Tablas;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 

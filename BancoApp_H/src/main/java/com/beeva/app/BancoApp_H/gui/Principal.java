@@ -1,4 +1,4 @@
-package com.beeva.app.BancoApp_H.gui;
+package com.beeva.app.bancoapp_h.gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
+import com.beeva.app.bancoapp_h.utilidades.ContexSingle;
 
 public class Principal extends JFrame {
 

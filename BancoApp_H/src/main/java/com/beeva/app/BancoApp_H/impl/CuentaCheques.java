@@ -1,10 +1,10 @@
-package com.beeva.app.BancoApp_H.impl;
+package com.beeva.app.bancoapp_h.impl;
 
 import javax.swing.JOptionPane;
 
-import com.beeva.app.BancoApp_H.dao.CuentaTipoDAO;
-import com.beeva.app.BancoApp_H.modelo.Cuenta;
-import com.beeva.app.BancoApp_H.utilidades.Validacion;
+import com.beeva.app.bancoapp_h.dao.CuentaTipoDAO;
+import com.beeva.app.bancoapp_h.modelo.Cuenta;
+import com.beeva.app.bancoapp_h.utilidades.Validacion;
 
 public class CuentaCheques implements CuentaTipoDAO{
 

@@ -1,4 +1,4 @@
-package com.beeva.app.BancoApp_H.impl;
+package com.beeva.app.bancoapp_h.impl;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.beeva.app.BancoApp_H.dao.TipoDeCuentaDAO;
-import com.beeva.app.BancoApp_H.modelo.TipoDeCuenta;
+import com.beeva.app.bancoapp_h.dao.TipoDeCuentaDAO;
+import com.beeva.app.bancoapp_h.modelo.TipoDeCuenta;
 
 @Repository
 public class TipoDeCuentaImpl extends TipoDeCuentaDAO{

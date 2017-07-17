@@ -1,4 +1,4 @@
-package com.beeva.app.BancoApp_H.utilidades;
+package com.beeva.app.bancoapp_h.utilidades;
 
 import java.util.Calendar;
 
@@ -12,9 +12,5 @@ public class Validacion {
 		if(dia==1){esHabil=false;}
 		if(dia==7){esHabil=false;}
 		return esHabil;
-	}
-	
-	public void depositosBuenos(){
-		
-	}
+	}	
 }

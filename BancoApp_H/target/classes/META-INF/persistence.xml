@@ -6,10 +6,10 @@
 	
 	<persistence-unit name="pruebaSH" transaction-type="RESOURCE_LOCAL">			
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>com.beeva.app.BancoApp_H.modelo.Banco</class>
-		<class>com.beeva.app.BancoApp_H.modelo.Cliente</class>
-		<class>com.beeva.app.BancoApp_H.modelo.Cuenta</class>
-		<class>com.beeva.app.BancoApp_H.modelo.TipoDeCuenta</class>
-		<class>com.beeva.app.BancoApp_H.modelo.BancosClientes</class>		
+		<class>com.beeva.app.bancoapp_h.modelo.Banco</class>
+		<class>com.beeva.app.bancoapp_h.modelo.Cliente</class>
+		<class>com.beeva.app.bancoapp_h.modelo.Cuenta</class>
+		<class>com.beeva.app.bancoapp_h.modelo.TipoDeCuenta</class>
+		<class>com.beeva.app.bancoapp_h.modelo.BancosClientes</class>		
 	</persistence-unit>
 </persistence>

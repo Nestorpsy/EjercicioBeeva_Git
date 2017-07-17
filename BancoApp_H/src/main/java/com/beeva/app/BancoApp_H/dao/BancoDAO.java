@@ -1,8 +1,8 @@
-package com.beeva.app.BancoApp_H.dao;
+package com.beeva.app.bancoapp_h.dao;
 
 import java.util.List;
 
-import com.beeva.app.BancoApp_H.modelo.Banco;
+import com.beeva.app.bancoapp_h.modelo.Banco;
 
 public abstract class BancoDAO {
 	public abstract void addBanco(Banco banco);

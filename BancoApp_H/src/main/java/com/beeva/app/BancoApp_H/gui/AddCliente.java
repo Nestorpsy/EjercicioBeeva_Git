@@ -1,4 +1,4 @@
-package com.beeva.app.BancoApp_H.gui;
+package com.beeva.app.bancoapp_h.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,10 +9,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.beeva.app.BancoApp_H.dao.ClienteDAO;
-import com.beeva.app.BancoApp_H.impl.ClienteImpl;
-import com.beeva.app.BancoApp_H.modelo.Cliente;
-import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
+import com.beeva.app.bancoapp_h.dao.ClienteDAO;
+import com.beeva.app.bancoapp_h.impl.ClienteImpl;
+import com.beeva.app.bancoapp_h.modelo.Cliente;
+import com.beeva.app.bancoapp_h.utilidades.ContexSingle;
 
 public class AddCliente extends JPanel {
 	/**
@@ -21,7 +21,6 @@ public class AddCliente extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JTextField textFieldApellidoAddCliente;
 	private JTextField textfieldNombreAddCliente;
-	ContexSingle single = ContexSingle.getInstance();
 
 	/**
 	 * Create the panel.
@@ -55,7 +54,7 @@ public class AddCliente extends JPanel {
         btnAddCliente.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		Cliente cliente = new Cliente();
-        		ClienteDAO dao = (ClienteImpl) single.getContext().getBean(ClienteImpl.class);
+        		ClienteDAO dao = (ClienteImpl) getContexIniciado().getContext().getBean(ClienteImpl.class);
         		cliente.setNombre(textfieldNombreAddCliente.getText());
         		cliente.setApellido(textFieldApellidoAddCliente.getText());
         		dao.addCiente(cliente);
@@ -65,5 +64,10 @@ public class AddCliente extends JPanel {
         });
         btnAddCliente.setBounds(191, 228, 97, 25);
         add(btnAddCliente);
+	}
+	
+	public ContexSingle getContexIniciado(){
+		ContexSingle single = ContexSingle.getInstance();
+		return single;
 	}
 }

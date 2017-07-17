@@ -1,4 +1,4 @@
-package com.beeva.app.BancoApp_H.gui;
+package com.beeva.app.bancoapp_h.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,19 +8,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import com.beeva.app.BancoApp_H.dao.BancoDAO;
-import com.beeva.app.BancoApp_H.impl.BancoImpl;
-import com.beeva.app.BancoApp_H.modelo.Banco;
-import com.beeva.app.BancoApp_H.utilidades.ContexSingle;
+import com.beeva.app.bancoapp_h.dao.BancoDAO;
+import com.beeva.app.bancoapp_h.impl.BancoImpl;
+import com.beeva.app.bancoapp_h.modelo.Banco;
+import com.beeva.app.bancoapp_h.utilidades.ContexSingle;
 
 public class AddBanco extends JPanel {
 	/**
 	 * 
 	 */
+
 	private static final long serialVersionUID = 1L;
 	private JTextField textFieldNombreAddBanco;
-	ContexSingle single = ContexSingle.getInstance();
-
+	
 	/**
 	 * Create the panel.
 	 */
@@ -43,7 +43,7 @@ public class AddBanco extends JPanel {
 		btnGuardarAddBanco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 		    	Banco banco = new Banco();
-		    	BancoDAO dao = (BancoImpl) single.getContext().getBean(BancoImpl.class);
+		    	BancoDAO dao = (BancoImpl) getContexIniciado().getContext().getBean(BancoImpl.class);
 		    	banco.setNombre(textFieldNombreAddBanco.getText());
 		    	dao.addBanco(banco);
 		    	textFieldNombreAddBanco.setText("");
@@ -52,5 +52,10 @@ public class AddBanco extends JPanel {
 		btnGuardarAddBanco.setBounds(171, 183, 97, 25);
 		add(btnGuardarAddBanco);
 
+	}
+	
+	public ContexSingle getContexIniciado(){
+		ContexSingle single = ContexSingle.getInstance();
+		return single;
 	}
 }
